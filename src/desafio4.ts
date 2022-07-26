@@ -10,7 +10,7 @@
 // Atenção para o listener do botão login-button que devolve o sessionID do usuário
 // É necessário fazer um cadastro no https://www.themoviedb.org/ e seguir a documentação do site para entender como gera uma API key https://developers.themoviedb.org/3/getting-started/introduction
 
-var apiKey:string = '8c3a0eaa2a900235a5787b52f8288a1e';
+var apiKey:string;
 let requestToken: string;
 let username: string;
 let password: string;
@@ -173,8 +173,10 @@ function preencherListaDescricao() {
 function validateLoginButton() {
     if (password && username && apiKey) {
         loginButton.disabled = false;
+        listButton.disabled = false;
     } else {
         loginButton.disabled = true;
+        listButton.disabled = true;
     }
 }
 
@@ -252,6 +254,7 @@ async function logar() {
     }) as ResponseToken;
 
     requestToken = result.request_token;
+    console.log(result.request_token);
 }
 
 async function criarSessao() {

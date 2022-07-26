@@ -17,7 +17,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 // Todas as requisições necessárias para as atividades acima já estão prontas, mas a implementação delas ficou pela metade (não vou dar tudo de graça).
 // Atenção para o listener do botão login-button que devolve o sessionID do usuário
 // É necessário fazer um cadastro no https://www.themoviedb.org/ e seguir a documentação do site para entender como gera uma API key https://developers.themoviedb.org/3/getting-started/introduction
-var apiKey = '8c3a0eaa2a900235a5787b52f8288a1e';
+var apiKey;
 let requestToken;
 let username;
 let password;
@@ -90,9 +90,11 @@ function preencherListaDescricao() {
 function validateLoginButton() {
     if (password && username && apiKey) {
         loginButton.disabled = false;
+        listButton.disabled = false;
     }
     else {
         loginButton.disabled = true;
+        listButton.disabled = true;
     }
 }
 class HttpClient {
@@ -165,6 +167,7 @@ function logar() {
             }
         });
         requestToken = result.request_token;
+        console.log(result.request_token);
     });
 }
 function criarSessao() {
