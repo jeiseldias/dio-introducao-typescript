@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Desafio 3</title>
+    </head>
+
+    <body>
+        <div style="display: flex;">
+            <div style="display: flex; width: 300px; height: 200px; justify-content: space-between; flex-direction: column;">
+                <input id="login" placeholder="Login" onchange="preencherLogin(event)">
+                <input id="senha" placeholder="Senha" type="password" onchange="preencherSenha(event)">
+                <input id="api-key" placeholder="Api Key" onchange="preencherApi()">
+                <button id="login-button" >Login</button>
+
+                <input id="lista-nome" placeholder="Nome da lista" onchange="preencherListaNome(event)">
+                <input id="lista-descricao" placeholder="Descricao da lista" onchange="preencherListaDescricao(event)">
+                <button id="lista-button">Criar lista</button>
+            </div>
+            <div id="search-container" style="margin-left: 20px">
+                <input id="search" placeholder="Escreva...">
+                <button id="search-button">Pesquisar Filme</button>
+                <div id="search-list"></div>
+            </div>
+            <div>
+                <h2 style="margin: 0;">Lista: <span id="lista-dados"></span></h2>
+                <div id="lista-conteudo"></div>
+            </div>
+        </div>
+
+        <script src="dist/desafio4.js"></script>
+    </body>
+</html>
